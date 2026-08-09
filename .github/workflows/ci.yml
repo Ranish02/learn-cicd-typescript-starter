@@ -26,5 +26,7 @@ jobs:
 
       - name: Run Tests
         run: npm run test -- --coverage
+      - name: Styling Check
+        run: npm run format:check 
 
 
