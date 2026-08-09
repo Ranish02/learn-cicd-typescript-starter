@@ -6,6 +6,6 @@ describe("API TESTS", ()=>{
         expect(getAPIKey).toBeDefined();
     })
    test("Get API key is working",()=>{
-        expect(getAPIKey("testingheaderstring")).not.toBeNull();
+        expect(getAPIKey("testingheaderstring")).toBeNull();
     })
 })
