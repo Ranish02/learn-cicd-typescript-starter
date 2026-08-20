@@ -24,8 +24,13 @@ jobs:
     - name: Build application
       run : npm run build
 
-    - name: Setup Gcloud
-      run: gcloud init
+    - name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v3'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
 
     - name: Setup Gcloud
       run: gcloud builds submit --tag us-central1-docker.pkg.dev/peak-text-506103-v3/notely-ar-repo/notely
