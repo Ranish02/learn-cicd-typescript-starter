@@ -23,3 +23,9 @@ jobs:
 
     - name: Build application
       run : npm run build
+
+    - name: Setup Gcloud
+      run: gcloud init
+
+    - name: Setup Gcloud
+      run: gcloud builds submit --tag us-central1-docker.pkg.dev/peak-text-506103-v3/notely-ar-repo/notely
